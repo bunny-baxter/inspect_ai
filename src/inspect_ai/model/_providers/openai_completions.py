@@ -155,9 +155,9 @@ def completion_params_completions(
         del params["parallel_tool_calls"]
 
     # remove reasoning_effort if not supported
-    if "reasoning_effort" in params.keys() and (
-        (openai_api.is_gpt() and not openai_api.is_gpt_5()) or openai_api.is_o1_early()
-    ):
-        del params["reasoning_effort"]
+    #if "reasoning_effort" in params.keys() and (
+        #(openai_api.is_gpt() and not openai_api.is_gpt_5()) or openai_api.is_o1_early()
+    #):
+        #del params["reasoning_effort"]
 
     return params

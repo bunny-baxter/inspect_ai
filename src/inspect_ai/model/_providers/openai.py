@@ -259,11 +259,12 @@ class OpenAIAPI(ModelAPI):
         return self.service == "azure"
 
     def has_reasoning_options(self) -> bool:
-        return (
-            (self.is_o_series() and not self.is_o1_early())
-            or (self.is_gpt_5() and not self.is_gpt_5_chat())
-            or self.is_codex()
-        )
+        #return (
+            #(self.is_o_series() and not self.is_o1_early())
+            #or (self.is_gpt_5() and not self.is_gpt_5_chat())
+            #or self.is_codex()
+        #)
+        return True
 
     def is_o_series(self) -> bool:
         name = self.service_model_name()
