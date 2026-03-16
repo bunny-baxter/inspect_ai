@@ -833,6 +833,8 @@ class AnthropicAPI(ModelAPI):
                 max_tokens = max_tokens + config.reasoning_tokens
 
         # apply caps after bumping for reasoning
+        # TODO: DO NOT MERGE
+        '''
         if (
             self.is_claude_4_6() and self.is_claude_4_opus()
         ) or self.is_claude_latest():
@@ -847,6 +849,8 @@ class AnthropicAPI(ModelAPI):
             max_tokens = min(max_tokens, 128000)
         else:
             max_tokens = min(max_tokens, 64000)
+        '''
+        max_tokens = 128_000
 
         return max_tokens
 
